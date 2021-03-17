@@ -1,6 +1,8 @@
 package aulas14_03;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Carros {
 
@@ -15,11 +17,11 @@ public class Carros {
 		carros.add(carro02);
 		carros.add(carro03);		
 		System.out.println(carros);
-				
+
 		// comparando string
 		int comparando = carro01.compareTo(carro02);
 		System.out.println(comparando);
-		
+
 		// negativo
 		if ( comparando < 0 ) {
 			System.out.println("O modelo " + carro01 + " tem palavra menor que o modelo " + carro02);
@@ -32,6 +34,14 @@ public class Carros {
 		else {
 			System.out.println("O modelo " + carro01 + " tem palavra maior que o modelo " + carro02);						
 		}
+		
+		// comparando e ordenando por modelo (forma resumida)
+		carros.sort(Comparator.comparing(ComparaLista::getAnoModelo));
+		System.out.println(carros);
+
+		// comparando e ordenando por ano (forma resumida)
+		Collections.sort(carros,Comparator.comparing(ComparaLista::getModelo));
+		System.out.println(carros);
 
 	}
 

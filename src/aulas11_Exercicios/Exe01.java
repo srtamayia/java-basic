@@ -1,4 +1,4 @@
-package aulas11;
+package aulas11_Exercicios;
 
 public class Exe01 {
 
